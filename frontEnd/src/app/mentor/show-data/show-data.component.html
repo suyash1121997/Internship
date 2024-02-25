@@ -1,0 +1,40 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <!-- <mat-drawer mode="side" opened="true"> -->
+      <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      <router-outlet></router-outlet>
+      <section class="vh-100 section-bg">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+        </nav>
+      
+        <div class="container my-4">
+          <div class="row mb-3">
+            <div class="col-12">
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-12" *ngFor="let internship of studentList.studentEmails">
+                <mat-card class="mb-3 internship-card">
+                    <mat-card-content>
+                      <div class="title-container">
+                        <h1>{{internship}}</h1>
+                        <div class="button-container">
+                          <button mat-button color="success" (click)="updateStatus(internship, studentList.internshipId,'ACCEPTED')">Accept</button>
+                        
+                        </div>
+                      </div>
+                    </mat-card-content>
+                  </mat-card>
+                  
+            </div>
+          </div>
+     
+        </div>
+      </section>
+    </mat-drawer-content>
+  </mat-drawer-container>

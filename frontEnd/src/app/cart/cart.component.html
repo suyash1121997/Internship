@@ -1,0 +1,49 @@
+<mat-drawer-container class="full-height">
+
+  <mat-drawer mode="side" [opened]="!sideBarOpen">
+    <app-studentsidebar></app-studentsidebar>
+  </mat-drawer>
+  
+  <mat-drawer-content>
+    <app-studentHeader (toggleSidebarForMe)="sideBarToggler()"></app-studentHeader>
+    <router-outlet></router-outlet>
+    
+    <section class="vh-100 section-bg">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      </nav>
+    
+      <div class="container my-4">
+        <div class="row mb-3">
+          <div class="col-12"></div>
+        </div>
+    
+        <div class="row">
+          <ng-container *ngIf="appliedInternship && appliedInternship.length > 0; else noItemsTemplate">
+            <div class="col-12" *ngFor="let internship of appliedInternship">
+              <mat-card class="mb-3 internship-card">
+                <mat-card-content>
+                  <h5 class="card-title">{{ internship.title }}</h5>
+                  <p class="card-text">{{ internship.description }}</p>
+                  <p class="text-muted">Location: {{ internship.location }}</p>
+                  <p class="text-muted">Duration: {{ internship.duration }}</p>
+                  <p class="text-muted">Price: ${{ internship.price }}</p>
+                  <p class="text-muted">Requirements: {{ internship.requirements }}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button color="primary" (click)="showCartDetails(internship,[],'Remove')">Remove</button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+            <button mat-button color="primary" (click)="showCartDetails(null, appliedInternship,'Apply')">Apply</button>
+          </ng-container>
+          
+          <ng-template #noItemsTemplate>
+            <div class="col-12 text-center">
+              <p>No items to display</p>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </section>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,69 @@
+/* Add this to your styles.css or styles.scss */
+
+.internship-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  .internship-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .mat-card {
+    margin: 10px;
+  }
+  
+  .card-content {
+    padding: 16px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333; /* Adjust the color as needed */
+  }
+  
+  .card-text {
+    margin-bottom: 1rem;
+    color: #666; /* Adjust the color as needed */
+  }
+  .cart-icon {
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .cart-icon mat-icon {
+    font-size: 24px;
+  }
+  
+  .cart-icon .mat-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+  }
+  
+  .text-muted {
+    color: #888; /* Adjust the color as needed */
+    margin-bottom: 0.5rem;
+  }
+  
+  .mat-badge {
+    margin-left: 5px;
+  }
+  
+  /* Optional: Gradient background for the cards */
+  .internship-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #308a84, #8e44ad); /* Adjust the gradient colors */
+    opacity: 0.7;
+    z-index: -1;
+  }
+  

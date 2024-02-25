@@ -1,0 +1,40 @@
+/* Add these styles to your component's CSS file or the global styles.css */
+
+.internship-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .title-container {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+  
+  button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
